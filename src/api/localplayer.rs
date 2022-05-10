@@ -39,4 +39,11 @@ pub mod localplayer {
         let client = crate::client::get_client();
         client.utils().ip_country()
     }
+
+    #[napi]
+    pub fn get_auth_ticket() -> String {
+        let client = crate::client::get_client();
+        let ticket = client.user().authentication_session_ticket();
+        String::from_utf8_lossy(&ticket.1).into_owned()
+    }
 }

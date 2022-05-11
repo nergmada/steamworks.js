@@ -39,6 +39,7 @@ export namespace localplayer {
   export function getLevel(): number
   /** @returns the 2 digit ISO 3166-1-alpha-2 format country code which client is running in, e.g. "US" or "UK". */
   export function getIpCountry(): string
+  export function getAuthTicket(): string
 }
 export namespace stats {
   export function getInt(name: string): number | null
